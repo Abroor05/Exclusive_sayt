@@ -1,0 +1,115 @@
+footer {
+  background-color: #000000;
+}
+
+.fot-top {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+  padding: 50px 0;
+  margin-bottom: 50px;
+}
+
+.fot-top ul {
+  list-style: none;
+}
+
+.fot-bottom {
+  text-align: center;
+  color: white;
+}
+
+.foter {
+  width: 190px;
+}
+
+.foter h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.fot1 h4 {
+  font-size: 14px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.fot1 p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.sendEmail {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.sendEmail input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.sendEmail .send {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #555;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.fot2 h5 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.fot2 p {
+  font-size: 14px;
+  color: #fafafa;
+  margin-bottom: 20px;
+}
+
+.fot3 li {
+  padding: 5px 0;
+}
+
+.fot4 li {
+  padding: 5px 0;
+}
+
+.fot5 p {
+  font-size: 14px;
+  color: #fafafa;
+  margin-bottom: 10px;
+}
+
+.fot5 .imgs {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.fot5 .imgs img {
+  width: 100%;
+}
+
+.fot5 span {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.fot-bottom {
+    padding: 20px 0;
+    border-top: 1px solid #141414;
+    color: #3D3D3D;
+}

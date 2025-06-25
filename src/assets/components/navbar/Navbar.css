@@ -1,0 +1,77 @@
+.top-nav {
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+}
+
+.top-nav a {
+  color: white;
+}
+
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 250px;
+}
+
+.nav-top .nav-shop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-top .til {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
+.bottom-nav {
+  border-bottom: 1px solid #b3b3b3;
+  padding: 15px 0;
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.links a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+
+.links a.active {
+    border-bottom: 1px solid black;
+}
+
+.logo a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+.input {
+    position: relative !important;
+}
+
+.Lupa {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
