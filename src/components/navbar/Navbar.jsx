@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
-import "./Navbar.css"
+import "./Navbar.css";
 import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
@@ -45,7 +45,9 @@ function Navbar() {
         <div className="container">
           <div className="navBar">
             <div className="logo">
-              <Link to={"/"}><h2>Exclusive</h2></Link>
+              <Link to={"/"}>
+                <h2>Exclusive</h2>
+              </Link>
             </div>
 
             <ul className="links">
@@ -57,13 +59,18 @@ function Navbar() {
 
             <div className="elements">
               <span className="search">
-                <TextField id="standard-basic" label="Standard" variant="standard"  className="SearchInput"/>
+                <TextField
+                  id="standard-basic"
+                  label="What are you "
+                  variant="standard"
+                  className="SearchInput"
+                />
                 <CiSearch className="Lupa" />
               </span>
 
               <span>
-                  <FaRegHeart />
-                  <LuShoppingCart />
+                <FaRegHeart />
+                <LuShoppingCart />
               </span>
             </div>
           </div>

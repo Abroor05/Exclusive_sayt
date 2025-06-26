@@ -54,24 +54,38 @@
   font-size: 16px;
 }
 
-
 .links a.active {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .logo a {
-    text-decoration: none;
-    color: black;
-    font-size: 24px;
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
 }
 
-.input {
-    position: relative !important;
+.search {
+  position: relative !important;
 }
 
 .Lupa {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+}
+
+.elements span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
