@@ -21,7 +21,6 @@ function App() {
           <Route path="/signIn" element={<Login />} />
         </Routes>
 
-      <Card />
 
         <Footer />
       </BrowserRouter>

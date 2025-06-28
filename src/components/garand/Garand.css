@@ -1,0 +1,34 @@
+.garand {
+  width: 280px;
+}
+
+.garand-img {
+  width: 80px;
+  height: 80px;
+  background-color: #c1c0c1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.garand-img span {
+  padding: 15px;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.garands {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+    padding: 50px 0;
+}

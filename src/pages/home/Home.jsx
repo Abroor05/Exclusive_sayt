@@ -1,237 +1,185 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "./Home.css"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import "./Home.css";
+
+import Card from "../../components/card/Card";
+import Box from "../../components/box/Box";
+import CatigorySlayd from "../../components/catigorySlayd/CatigorySlayd";
+import ArravelPhoto from "../../components/arravelPhote/ArravelPhoto";
+import Garand from "../../components/garand/Garand";
+import HeroSlayd from "../../components/heroSlayd/HeroSlayd";
 
 function Home() {
   return (
     <>
       <section className="hero-section">
         <div className="container">
-          <div className="hero">
-            <div className="hero-left">
-              <ul>
-                <Link>Woman’s Fashion</Link>
-                <Link>Men’s Fashion</Link>
-                <Link>Electronics</Link>
-                <Link>Home & Lifestyle</Link>
-                <Link>Medicine</Link>
-                <Link>Sports & Outdoor</Link>
-                <Link>Baby’s & Toys</Link>
-                <Link>Groceries & Pets</Link>
-                <Link>Health & Beauty</Link>
-              </ul>
+          <HeroSlayd/>
+        </div>
+      </section>
+
+      <section className="today-section">
+        <div className="container">
+          <div className="card-title">
+            <div className="total">
+              <div className="kub"></div>
+              <h3>Today’s</h3>
             </div>
 
-           <Swiper
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
-
-                  <h1>Up to 10% off Voucher</h1>
-
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
+            <div className="sales">
+              <div className="flashSays">
+                <div className="flash">
+                  <h3>Flash Sales</h3>
                 </div>
 
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
-                </div>
-              </div>
-            </div></SwiperSlide>
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
-
-                  <h1>Up to 10% off Voucher</h1>
-
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
-                </div>
-
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
+                <div className="clock">
+                  <span>
+                    <p>Days</p>
+                    <h3>03</h3>
+                  </span>
+                  <h3>:</h3>
+                  <span>
+                    <p>Hours</p>
+                    <h3>23</h3>
+                  </span>
+                  <h3>:</h3>
+                  <span>
+                    <p>Minutes</p>
+                    <h3>19</h3>
+                  </span>
+                  <h3>:</h3>
+                  <span>
+                    <p>Seconds</p>
+                    <h3>56</h3>
+                  </span>
                 </div>
               </div>
-            </div></SwiperSlide>
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
 
-                  <h1>Up to 10% off Voucher</h1>
-
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
-                </div>
-
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
-                </div>
+              <div className="nextBtn">
+                <span>
+                  <FaArrowLeft />
+                </span>
+                <span>
+                  <FaArrowRight />
+                </span>
               </div>
-            </div></SwiperSlide>
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
+            </div>
+          </div>
 
-                  <h1>Up to 10% off Voucher</h1>
+          <div className="cards">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
 
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
-                </div>
+          <button className="allProdactBtn">View All Products</button>
+        </div>
+      </section>
 
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
-                </div>
+      <section className="catigories">
+        <div className="container">
+          <div className="total">
+            <div className="kub"></div>
+            <h3>Categories</h3>
+          </div>
+          <div className="sales">
+            <div className="flashSays">
+              <div className="flash">
+                <h3>Browse By Category</h3>
               </div>
-            </div></SwiperSlide>
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
+            </div>
 
-                  <h1>Up to 10% off Voucher</h1>
+            <div className="nextBtn">
+              <span>
+                <FaArrowLeft />
+              </span>
+              <span>
+                <FaArrowRight />
+              </span>
+            </div>
+          </div>
 
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
-                </div>
-
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
-                </div>
-              </div>
-            </div></SwiperSlide>
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
-
-                  <h1>Up to 10% off Voucher</h1>
-
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
-                </div>
-
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
-                </div>
-              </div>
-            </div></SwiperSlide>
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
-
-                  <h1>Up to 10% off Voucher</h1>
-
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
-                </div>
-
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
-                </div>
-              </div>
-            </div></SwiperSlide>
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
-
-                  <h1>Up to 10% off Voucher</h1>
-
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
-                </div>
-
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
-                </div>
-              </div>
-            </div></SwiperSlide>
-        <SwiperSlide> <div className="hero-right">
-              <div className="imgs">
-                <div className="imgs-info">
-                  <div className="apps-title">
-                    <span className="appleImg"><img src="/imgs/apple.svg" alt="" /></span>
-                    <p>iPhone 14 Series</p>
-                  </div>
-
-                  <h1>Up to 10% off Voucher</h1>
-
-                  <div className="btns">
-                    <button className="shopBtn"><Link>Shop Now </Link></button>
-                  <button className="shopBtn1"><FaArrowRight /></button>
-                  </div>
-                </div>
-
-                <div className="imgs-img">
-                  <img src="/imgs/apple13pro.png" alt="" />
-                </div>
-              </div>
-            </div></SwiperSlide>
-      </Swiper>
+          <div className="boxs">
+            <Box />
+            <Box />
+            <Box />
+            <Box />
+            <Box />
+            <Box />
           </div>
         </div>
       </section>
 
-      <section>
+      <section className="catigories">
         <div className="container">
-          
+          <div className="total">
+            <div className="kub"></div>
+            <h3>Categories</h3>
+          </div>
+          <div className="sales">
+            <div className="flashSays">
+              <div className="flash">
+                <h3>Browse By Category</h3>
+              </div>
+            </div>
+
+            <div className="nextBtn">
+              <button>View All</button>
+            </div>
+          </div>
+
+          <div className="cards">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </div>
+      </section>
+
+      <section className="slayd-section">
+        <div className="container">
+          <CatigorySlayd />
+        </div>
+      </section>
+
+      <section className="ourProdact">
+        <div className="container">
+          <div className="total">
+            <div className="kub"></div>
+            <h3>Explore Our Products</h3>
+          </div>
+
+          <div className="cards">
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </div>
+
+          <button className="allProdactBtn">View All Products</button>
+        </div>
+      </section>
+
+      <section className="photo-section">
+        <div className="container">
+          <ArravelPhoto />
+        </div>
+      </section>
+
+      <section className="garand-section">
+        <div className="container">
+          <div className="garands">
+            <Garand />
+            <Garand />
+            <Garand />
+          </div>
         </div>
       </section>
     </>

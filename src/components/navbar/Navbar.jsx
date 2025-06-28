@@ -22,10 +22,7 @@ function Navbar() {
             </span>
 
             <span className="lenguage">
-              <select className="til" id="language" name="language">
-                <option value="en" selected>
-                  English
-                </option>
+              <select className="til" id="language" name="language" defaultValue="English">
                 <option value="es">Español (Spanish)</option>
                 <option value="fr">Français (French)</option>
                 <option value="de">Deutsch (German)</option>

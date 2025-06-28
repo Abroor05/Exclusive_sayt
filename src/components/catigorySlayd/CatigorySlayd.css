@@ -1,0 +1,113 @@
+.MusicSlayd .container {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 0 40px;
+  position: relative;
+  padding-left: 70px;
+}
+
+.slayd-left {
+  width: 440px;
+  color: white;
+
+}
+
+.slayd-left h5 {
+  color: #00ff66;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  text-align: start;
+}
+
+.slayd-left h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.date span {
+  padding: 12px 10px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.date span h4 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.date span p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.buyNowBtn {
+  padding: 10px 30px;
+  border: none;
+  background-color: #00ff66;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.slayd-right {
+  width: 700px;
+  position: relative;
+  margin: auto;
+}
+.bacolor {
+  height: 500px;
+  width: 600px;
+  backdrop-filter: blur(200px);
+  border-radius: 50%;
+}
+
+.musicPlay {
+  width: 560px;
+  margin: auto;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.musicPlay img {
+  width: 100%;
+  background-color: transparent;
+}
+
+/* slayd */
+
+
+
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+
