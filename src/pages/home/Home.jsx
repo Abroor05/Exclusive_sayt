@@ -9,13 +9,24 @@ import CatigorySlayd from "../../components/catigorySlayd/CatigorySlayd";
 import ArravelPhoto from "../../components/arravelPhote/ArravelPhoto";
 import Garand from "../../components/garand/Garand";
 import HeroSlayd from "../../components/heroSlayd/HeroSlayd";
+import { IoPersonOutline, IoStarOutline } from "react-icons/io5";
+import { LuShoppingBag } from "react-icons/lu";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { BiLogOut } from "react-icons/bi";
+import ShowOpenModal from "../../components/showOpenModal/ShowOpenModal";
 
-function Home() {
+function Home({showOpenModal}) {
   return (
     <>
+
+    {
+      showOpenModal == true ? <ShowOpenModal/> : ""
+    }
+     
+
       <section className="hero-section">
         <div className="container">
-          <HeroSlayd/>
+          <HeroSlayd />
         </div>
       </section>
 

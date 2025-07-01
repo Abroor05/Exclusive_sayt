@@ -12,7 +12,12 @@
 .slayd-left {
   width: 440px;
   color: white;
+}
 
+.swiper-button-prev {
+  width: 100px;
+  color: black;
+  background-color: red;
 }
 
 .slayd-left h5 {
@@ -101,13 +106,7 @@
 
 /* slayd */
 
-
-
-
-
 .swiper {
   width: 100%;
   height: 100%;
 }
-
-

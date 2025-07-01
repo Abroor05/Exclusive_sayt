@@ -1,7 +1,10 @@
-import { TextField } from "@mui/material";
 import React from "react";
-import "./Login.css"
-function Login() {
+import "./SignUp.css";
+import { TextField } from "@mui/material";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
+
+function SignUp() {
   return (
     <>
       <section className="signUp-section">
@@ -17,6 +20,15 @@ function Login() {
               </div>
 
               <div className="inputs">
+                <span>
+                  <TextField
+                    className="name inputSign"
+                    id="standard-basic"
+                    label="Name"
+                    variant="standard"
+                  />
+                </span>
+
                 <span>
                   <TextField
                     className="email inputSign"
@@ -37,9 +49,14 @@ function Login() {
               </div>
 
               <div className="signUpBtns">
-                <span className="Loginspan">
-                  <button className="loginBtns">Login</button>
-                  <p> Forget Password?</p>
+                <div className="createAcountBtn">Create Account</div>
+                <div className="withGoogleBtn">
+                  {" "}
+                  <FcGoogle /> Sign up with Google
+                </div>
+                <span className="nextLogin">
+                  <p>Already have account?</p>
+                  <Link to={"/login"}>Log in</Link>
                 </span>
               </div>
             </div>
@@ -50,4 +67,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;

@@ -1,0 +1,34 @@
+
+
+
+.modals {
+  position: fixed;
+  background-color: #2b272ca4;
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  top: 100px;
+  right: 80px;
+  border-radius: 10px;
+}
+
+.modals .modal {
+  width: 240px;
+  padding: 10px;
+}
+
+.modals .modal span {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px 0;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  gap: 10px;
+  margin: 0;
+}
+
+.modals .modal span h4 {
+  font-size: 18px;
+
+}

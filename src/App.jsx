@@ -1,24 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import Aboute from "./pages/aboute/Aboute";
-import Login from "./pages/login/Login";
 import Footer from "./components/footer/Footer";
-import Card from "./components/card/Card";
+import SignUp from "./pages/signUp/SignUp";
+import Login from "./pages/login/Login";
 
 function App() {
+
+
+  const [showOpenModal, setShowOpenModal] = useState(false)
+
+
+
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar setShowOpenModal = {setShowOpenModal}/>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home  showOpenModal={showOpenModal}/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/aboute" element={<Aboute />} />
-          <Route path="/signIn" element={<Login />} />
+          <Route path="/signUp" element={<SignUp/>} />
+          <Route path="/login" element={<Login/>} />
         </Routes>
 
 

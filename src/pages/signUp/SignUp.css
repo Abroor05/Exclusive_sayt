@@ -7,8 +7,6 @@
 
 .signLeft {
   position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .sings {
@@ -79,19 +77,26 @@
   border: 1px solid #999999;
 }
 
-.loginBtns {
-  padding: 10px 30px;
-  cursor: pointer;
-  border: none;
-  background-color: #db4444;
-  color: white;
-  border-radius: 5px;
-  font-weight: 600;
-}
-
-.Loginspan {
-  width: 100%;
+.nextLogin {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
 }
+
+.nextLogin a {
+  text-decoration: none;
+  padding: 5px 0;
+  border-bottom: 1px solid #999999;
+  color: #4d4d4d;
+}
+
+.nextLogin p {
+  color: #4d4d4d;
+  font-size: 16px;
+ 
+
+}
+
+
+

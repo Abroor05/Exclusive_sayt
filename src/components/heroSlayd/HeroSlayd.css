@@ -1,0 +1,8 @@
+.swiper {
+  width: 900px;
+  height: auto; /* avtomatik bo‘lsin */
+}
+
+.swiper .swiper-pagination-bullet {
+  background-color: red;
+}

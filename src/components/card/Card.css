@@ -56,6 +56,15 @@
   font-size: 24px;
 }
 
+.see {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.like {
+  cursor: pointer;
+}
+
 .card:hover .seeLike {
   right: 5px;
 }

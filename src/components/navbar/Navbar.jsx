@@ -6,8 +6,9 @@ import { CiSearch } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { TextField } from "@mui/material";
+import { IoPersonSharp } from "react-icons/io5";
 
-function Navbar() {
+function Navbar({ setShowOpenModal }) {
   return (
     <>
       <nav className="top-nav">
@@ -22,7 +23,12 @@ function Navbar() {
             </span>
 
             <span className="lenguage">
-              <select className="til" id="language" name="language" defaultValue="English">
+              <select
+                className="til"
+                id="language"
+                name="language"
+                defaultValue="English"
+              >
                 <option value="es">Español (Spanish)</option>
                 <option value="fr">Français (French)</option>
                 <option value="de">Deutsch (German)</option>
@@ -51,7 +57,7 @@ function Navbar() {
               <NavLink to={"/"}>Home</NavLink>
               <NavLink to={"/contact"}>Contact</NavLink>
               <NavLink to={"/aboute"}>About</NavLink>
-              <NavLink to={"/login"}>Sign Up</NavLink>
+              <NavLink to={"/signUp"}>Sign Up</NavLink>
             </ul>
 
             <div className="elements">
@@ -66,8 +72,14 @@ function Navbar() {
               </span>
 
               <span>
-                <FaRegHeart />
-                <LuShoppingCart />
+                <FaRegHeart className="icons" />
+                <LuShoppingCart className="icons Person" />
+                <IoPersonSharp
+                  className="icons"
+                  onClick={() => {
+                    setShowOpenModal((showOpenModal) => !showOpenModal);
+                  }}
+                />
               </span>
             </div>
           </div>
