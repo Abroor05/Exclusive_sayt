@@ -1,0 +1,35 @@
+.aboutTitle {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.aboteHero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.abouteHero-info {
+    width: 500px;
+}
+
+.abouteHero-info h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+
+.abouteHero-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.abouteHero-img {
+    width: 800px;
+}
+
+.abouteHero-img img {
+    width: 100%;
+}       
+

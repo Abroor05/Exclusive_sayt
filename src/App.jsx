@@ -7,12 +7,14 @@ import Aboute from "./pages/aboute/Aboute";
 import Footer from "./components/footer/Footer";
 import SignUp from "./pages/signUp/SignUp";
 import Login from "./pages/login/Login";
+import Erorr from "./pages/error/Erorr";
 
 function App() {
 
 
   const [showOpenModal, setShowOpenModal] = useState(false)
 
+  
 
 
   return (
@@ -22,10 +24,11 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home  showOpenModal={showOpenModal}/>} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/aboute" element={<Aboute />} />
-          <Route path="/signUp" element={<SignUp/>} />
-          <Route path="/login" element={<Login/>} />
+          <Route path="/contact" element={<Contact showOpenModal={showOpenModal} />} />
+          <Route path="/aboute" element={<Aboute showOpenModal={showOpenModal} />} />
+          <Route path="/signUp" element={<SignUp showOpenModal={showOpenModal}/>} />
+          <Route path="/login" element={<Login showOpenModal={showOpenModal}/>} />
+          <Route path="*" element={<Erorr/>} />
         </Routes>
 
 
