@@ -4,6 +4,7 @@ import { IoIosCloseCircleOutline } from 'react-icons/io'
 import { IoPersonOutline, IoStarOutline } from 'react-icons/io5'
 import { LuShoppingBag } from 'react-icons/lu'
 import "./ShowOpenModal.css"
+import { Link } from 'react-router-dom'
 
 function ShowOpenModal() {
   return (
@@ -16,31 +17,31 @@ function ShowOpenModal() {
               <h4>
                 <IoPersonOutline />
               </h4>
-              <p>Manage My Account </p>
+              <Link to={"myacount"}>Manage My Account </Link>
             </span>
             <span>
               <h4>
                 <LuShoppingBag />
               </h4>
-              <p>My Order </p>
+              <Link>My Order </Link>
             </span>
             <span>
               <h4>
                 <IoIosCloseCircleOutline />
               </h4>
-              <p>My Cancellations </p>
+              <Link>My Cancellations </Link>
             </span>
             <span>
               <h4>
                 <IoStarOutline />
               </h4>
-              <p>My Reviews </p>
+              <Link>My Reviews </Link>
             </span>
             <span>
               <h4>
                 <BiLogOut />
               </h4>
-              <p>Logoute </p>
+              <Link>Logoute </Link>
             </span>
           </div>
         </div>

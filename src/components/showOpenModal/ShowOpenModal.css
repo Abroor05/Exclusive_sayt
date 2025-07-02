@@ -9,11 +9,13 @@
   top: 100px;
   right: 80px;
   border-radius: 10px;
+
 }
 
 .modals .modal {
   width: 240px;
   padding: 10px;
+  
 }
 
 .modals .modal span {
@@ -28,7 +30,11 @@
   margin: 0;
 }
 
+.modals .modal span a {
+  text-decoration: none;
+  color: white;
+}
+
 .modals .modal span h4 {
   font-size: 18px;
-
 }
