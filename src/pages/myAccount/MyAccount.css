@@ -36,10 +36,124 @@
 }
 
 .menus span a {
-    color: #808080;
-    text-decoration: none;
+  color: #808080;
+  text-decoration: none;
 }
 
 .menus span a:active {
-    color: red;
+  color: red;
+}
+
+.accountRight {
+  width: 880px;
+  padding: 20px 30px;
+}
+
+.topProfils {
+  width: 710px;
+  margin: 0 auto;
+}
+
+.topProfils h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #db4444;
+}
+
+.titleInputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.titleInputs span {
+  width: 330px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.titleInputs span label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.titleInputs span input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.bottomProfiles {
+  width: 710px;
+}
+
+.bottomProfiles input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #f5f5f5;
+}
+
+.bottomInputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bottomProfiles h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.profilBtn {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
+.profilBtn1 {
+  border: none;
+  padding: 10px 30px;
+  background-color: white;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.profilBtn1:hover {
+  background-color: #db4444;
+  color: white;
+}
+
+.profilBtn2 {
+  padding: 10px 30px;
+  background-color: #db4444;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+.account {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
 }

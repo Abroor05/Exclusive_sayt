@@ -23,6 +23,7 @@
 .centrImg {
   width: 180px;
   margin: auto;
+  object-fit: contain;
 }
 
 .card-img {
