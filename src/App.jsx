@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import SignUp from "./pages/signUp/SignUp";
 import Login from "./pages/login/Login";
 import Erorr from "./pages/error/Erorr";
+import MyAccount from "./pages/myAccount/MyAccount";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/aboute" element={<Aboute showOpenModal={showOpenModal} />} />
           <Route path="/signUp" element={<SignUp showOpenModal={showOpenModal}/>} />
           <Route path="/login" element={<Login showOpenModal={showOpenModal}/>} />
+          <Route path="/myaccount" element={<MyAccount/>} />
           <Route path="*" element={<Erorr/>} />
         </Routes>
 

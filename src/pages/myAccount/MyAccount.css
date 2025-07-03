@@ -1,0 +1,45 @@
+.accountTitle {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+}
+
+.accountTitle a {
+  color: black;
+  text-decoration: none;
+  padding: 20px 0;
+}
+
+.accountLeft {
+  width: 250px;
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.menus span {
+  width: 200px;
+  margin-left: 80px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menus h3 {
+  font-size: 24px;
+  color: black;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.menus span a {
+    color: #808080;
+    text-decoration: none;
+}
+
+.menus span a:active {
+    color: red;
+}

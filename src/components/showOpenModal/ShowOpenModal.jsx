@@ -6,7 +6,7 @@ import { LuShoppingBag } from 'react-icons/lu'
 import "./ShowOpenModal.css"
 import { Link } from 'react-router-dom'
 
-function ShowOpenModal() {
+function ShowOpenModal({setShowOpenModal}) {
   return (
     <>
     
@@ -17,7 +17,9 @@ function ShowOpenModal() {
               <h4>
                 <IoPersonOutline />
               </h4>
-              <Link to={"myacount"}>Manage My Account </Link>
+              <Link to={"/myaccount"} onClick={()=>{
+                setShowOpenModal(false)
+              }}>Manage My Account </Link>
             </span>
             <span>
               <h4>
