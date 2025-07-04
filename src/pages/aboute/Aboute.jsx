@@ -17,7 +17,7 @@ function Aboute() {
       <section className="abouteSection">
         <div className="container">
           <div className="aboutTitle">
-            <Link>Home</Link>
+            <Link to={"/"}>Home</Link>
             <span>/</span>
             <Link>Aboute</Link>
           </div>
