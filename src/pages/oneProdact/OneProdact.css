@@ -1,0 +1,296 @@
+.oneProdactTitle {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  color: #808080;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.oneProdactTitle a {
+  text-decoration: none;
+  color: #808080;
+}
+
+.oneProducts {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.oneProdactLeft {
+  width: 750px;
+  display: flex;
+  align-items: stretch; 
+  justify-content: start;
+  gap: 50px;
+}
+
+.littleImgs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.littleImg {
+  width: 120px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.littleImg img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.bigImg {
+  width: 500px;
+  height: 500px;
+  background-color: #f5f5f5;
+  padding: 30px;
+  height: 100%;
+}
+
+.biger {
+  width: 450px;
+  margin: 100px auto;
+}
+
+.bigImg .biger img {
+  width: 100%;
+}
+
+.oneProdactRight {
+  width: 400px;
+}
+.oneProdactRight h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.baho {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.baho span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.baho span .gold {
+  font-size: 18px;
+  font-weight: 500;
+  color: gold;
+}
+.baho span .white {
+  font-size: 18px;
+  color: #bfbfbf;
+}
+
+.stoks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.stoks p {
+  font-size: 14px;
+  color: #808080;
+}
+
+.stoks .inStok {
+  color: #00ff66;
+  font-size: 14px;
+}
+
+.price {
+  font-size: 24px;
+  color: black;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #000000;
+  padding: 20px 0;
+  border-bottom: 2px solid;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.colors {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.colors span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.colors .div1,
+.colors .div2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.colors .div1 {
+  background-color: #a0bce0;
+  cursor: pointer;
+}
+
+.colors .div2 {
+  background-color: #e07575;
+  cursor: pointer;
+}
+
+.colors .div1:focus {
+  border: 1px solid black;
+}
+
+/* buy */
+
+.buys {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.buys .counts {
+  width: 160px;
+  border: 2px solid #808080;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.minus {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid #808080;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.minus:active {
+  color: white;
+  background-color: #db4444;
+}
+
+.plas {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid #808080;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.plas:active {
+  color: white;
+  background-color: #db4444;
+}
+
+.count {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.buyBtn {
+  padding: 10px 30px;
+  border: none;
+  background-color: #db4444;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.heard {
+  padding: 5px;
+  border: 2px solid #808080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  nav-down: 700;
+  font-size: 24px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.supportes {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.supporte {
+  width: 100%;
+  border: 2px solid #808080;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 10px;
+  gap: 20px;
+}
+
+.suoImg {
+  font-size: 32px;
+  margin: 0;
+}
+
+.supInfo h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin: 0;
+}
+
+.supInfo a {
+  font-size: 14px;
+  color: black;
+}
+
+.supInfo p {
+  font-size: 14px;
+  color: #000000;
+}

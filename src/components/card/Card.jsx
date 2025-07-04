@@ -2,6 +2,7 @@ import React from 'react'
 import { FaRegHeart, FaStar } from 'react-icons/fa'
 import { MdOutlineRemoveRedEye } from 'react-icons/md'
 import "./Card.css"
+import { Link } from 'react-router-dom'
 
 function Card() {
   return (
@@ -12,7 +13,7 @@ function Card() {
            <div className="centrImg">
              <img src="/imgs/card1.png" alt="" />
               <div className="addToCard">
-              <div className='add'>Add To Cart</div>
+              <Link to={"/oneprodact"} className='add'>Add To Cart</Link>
             </div>
            </div>
             <div className="sales">

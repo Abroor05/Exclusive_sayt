@@ -9,12 +9,13 @@ import SignUp from "./pages/signUp/SignUp";
 import Login from "./pages/login/Login";
 import Erorr from "./pages/error/Erorr";
 import MyAccount from "./pages/myAccount/MyAccount";
+import OneProdact from "./pages/oneProdact/OneProdact";
 
 function App() {
 
 
   const [showOpenModal, setShowOpenModal] = useState(false)
-
+  const [count, setCount] = useState(0)
   
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/signUp" element={<SignUp showOpenModal={showOpenModal}/>} />
           <Route path="/login" element={<Login showOpenModal={showOpenModal}/>} />
           <Route path="/myaccount" element={<MyAccount/>} />
+          <Route  path="/oneprodact" element={<OneProdact setCount={setCount} count={count} />}/>
           <Route path="*" element={<Erorr/>} />
         </Routes>
 
