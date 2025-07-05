@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./OneProdact.css";
 import { FaStar } from "react-icons/fa";
@@ -6,8 +6,17 @@ import { CiHeart, CiStar } from "react-icons/ci";
 import { TbTruckDelivery } from "react-icons/tb";
 import { RxUpdate } from "react-icons/rx";
 import Card from "../../components/card/Card";
+import { getDataId } from "../../services/app";
 
 function OneProdact({ setCount, count, littleData }) {
+
+  const [dataId, setDataId] = useState([])
+
+
+  useEffect(() =>{
+    getDataId().then(setDataId)
+  }, [])
+
   return (
     <>
       <section className="oneProdactSection">
@@ -20,6 +29,7 @@ function OneProdact({ setCount, count, littleData }) {
             <Link>Havic HV G-92 Gamepad</Link>
           </div>
 
+          
           <div className="oneProducts">
             <div className="oneProdactLeft">
               <div className="littleImgs">

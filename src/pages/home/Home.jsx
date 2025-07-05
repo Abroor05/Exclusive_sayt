@@ -19,26 +19,12 @@ import { getData } from "../../services/app";
 function Home({ showOpenModal }) {
   const [data, setData] = useState([]);
   const [countSee, setCountSee] = useState(4)
-  const [activeIndex, setActiveIndex] = useState(null);
 
 
 
   useEffect(() => {
     getData().then(setData);
   }, []);
-
-  const  showCards  = (index) => {
-    if (activeIndex === index) {
-      setActiveIndex(null);
-    } else {
-      setActiveIndex(index); 
-    }
-  };
-
-
-
-
-
 
 
 
