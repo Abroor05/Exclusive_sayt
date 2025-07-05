@@ -1,29 +1,29 @@
-import React from "react";
-import { FaRegHeart, FaStar } from "react-icons/fa";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
-import "./Card.css";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { FaRegHeart, FaStar } from 'react-icons/fa'
+import { MdOutlineRemoveRedEye } from 'react-icons/md'
+import { Link } from 'react-router-dom'
+import "./WishList.css"
+import { FaRegTrashCan } from 'react-icons/fa6'
+import { LuShoppingCart } from 'react-icons/lu'
 
-function Card({item}) {
+function WishListCard() {
   return (
     <>
-      <div className="card">
+    
+        <div className="card">
         <div className="card-img">
           <div className="centrImg">
-            <img src= {`https://ecommercev01.pythonanywhere.com/${item?.pictures[0]}`}  alt="" />
+            <img src="/imgs/card1.png" alt="" />
             <div className="addToCard">
               <Link to={"/oneprodact"} className="add">
-                Add To Cart
+                <LuShoppingCart /> Add To Cart 
               </Link>
             </div>
           </div>
           <div className="sales">
             <div className="seeLike">
-              <span>
-                <FaRegHeart className="like" />
-              </span>
-              <span>
-                <MdOutlineRemoveRedEye className="see" />
+              <span className='seeSpan'>
+                <FaRegTrashCan className='trash' />
               </span>
             </div>
             <span className="sale">-40%</span>
@@ -31,14 +31,14 @@ function Card({item}) {
         </div>
 
         <div className="card-info">
-          <h4>{item?.title}</h4>
-          <p>{item?.price}{" "}
+          <h4>HAVIT HV-G92 Gamepad</h4>
+          <p>
+            $120{" "}
             <span>
-              <del>{item?.discount_price}</del>
+              <del>$160</del>
             </span>
           </p>
           <div className="stars">
-
             <FaStar />
             <FaStar />
             <FaStar />
@@ -48,8 +48,9 @@ function Card({item}) {
           </div>
         </div>
       </div>
+
     </>
-  );
+  )
 }
 
-export default Card;
+export default WishListCard

@@ -1,0 +1,50 @@
+.wishlistTitle .tops {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.tops h4 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.tops button {
+  padding: 10px 20px;
+  border: none;
+  background-color: white;
+  border: 1px solid #808080;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.wishListCards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.justForYou .tops {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap ;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.justForYou .tops h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.justForYouCards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

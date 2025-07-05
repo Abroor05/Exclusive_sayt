@@ -7,7 +7,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { RxUpdate } from "react-icons/rx";
 import Card from "../../components/card/Card";
 
-function OneProdact({setCount, count}) {
+function OneProdact({ setCount, count, littleData }) {
   return (
     <>
       <section className="oneProdactSection">
@@ -23,9 +23,12 @@ function OneProdact({setCount, count}) {
           <div className="oneProducts">
             <div className="oneProdactLeft">
               <div className="littleImgs">
-                <div className="littleImg">
-                  <img src="/imgs/card1.png" alt="" />
-                </div>
+                {littleData?.map((item, index) => {
+                  <div className="littleImg">
+                    <img src={item.imgs[1]} alt="" />
+                  </div>;
+                })}
+
                 <div className="littleImg">
                   <img src="/imgs/card1.png" alt="" />
                 </div>
@@ -80,15 +83,25 @@ function OneProdact({setCount, count}) {
 
               <div className="buys">
                 <div className="counts">
-                  <div onClick={()=>{
-                    if (count > 0) {
-                        setCount(count - 1)
-                    }
-                  }} className="minus">-</div>
+                  <div
+                    onClick={() => {
+                      if (count > 0) {
+                        setCount(count - 1);
+                      }
+                    }}
+                    className="minus"
+                  >
+                    -
+                  </div>
                   <div className="count">{count}</div>
-                  <div onClick={()=>{
-                        setCount(count + 1)
-                  }} className="plas">+</div>
+                  <div
+                    onClick={() => {
+                      setCount(count + 1);
+                    }}
+                    className="plas"
+                  >
+                    +
+                  </div>
                 </div>
 
                 <div className="buyBtn">Buy Now</div>

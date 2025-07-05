@@ -72,7 +72,7 @@ function Navbar({ setShowOpenModal }) {
               </span>
 
               <span>
-                <FaRegHeart className="icons" />
+                <Link to="/wishlist"><FaRegHeart className="icons" /></Link>
                 <LuShoppingCart className="icons Person" />
                 <IoPersonSharp
                   className="icons"

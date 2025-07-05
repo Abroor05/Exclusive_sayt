@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./Home.css";
@@ -14,15 +14,37 @@ import { LuShoppingBag } from "react-icons/lu";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
 import ShowOpenModal from "../../components/showOpenModal/ShowOpenModal";
+import { getData } from "../../services/app";
 
-function Home({showOpenModal}) {
+function Home({ showOpenModal }) {
+  const [data, setData] = useState([]);
+  const [countSee, setCountSee] = useState(4)
+  const [activeIndex, setActiveIndex] = useState(null);
+
+
+
+  useEffect(() => {
+    getData().then(setData);
+  }, []);
+
+  const  showCards  = (index) => {
+    if (activeIndex === index) {
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(index); 
+    }
+  };
+
+
+
+
+
+
+
+
   return (
     <>
-
-    {
-      showOpenModal == true ? <ShowOpenModal/> : ""
-    }
-     
+      {showOpenModal == true ? <ShowOpenModal /> : ""}
 
       <section className="hero-section">
         <div className="container">
@@ -79,13 +101,14 @@ function Home({showOpenModal}) {
           </div>
 
           <div className="cards">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            { data.slice(0, countSee).map((item) => {
+              return <Card item={item} />;
+            })}
           </div>
 
-          <button className="allProdactBtn">View All Products</button>
+          <button onClick={()=>{
+            setCountSee(data.length)
+          }} className="allProdactBtn">View All Products</button>
         </div>
       </section>
 
@@ -127,7 +150,7 @@ function Home({showOpenModal}) {
         <div className="container">
           <div className="total">
             <div className="kub"></div>
-            <h3>Categories</h3>
+            <h3>This Month</h3>
           </div>
           <div className="sales">
             <div className="flashSays">
@@ -137,15 +160,16 @@ function Home({showOpenModal}) {
             </div>
 
             <div className="nextBtn">
-              <button>View All</button>
+              <button onClick={()=>{
+                  setCountSee(data.length)
+              }}>View All</button>
             </div>
           </div>
 
           <div className="cards">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            { data.slice(0, countSee).map((item) => {
+              return <Card item={item} />;
+            })}
           </div>
         </div>
       </section>
@@ -164,14 +188,9 @@ function Home({showOpenModal}) {
           </div>
 
           <div className="cards">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            { data.slice(0, 4).map((item) => {
+              return <Card item={item} />;
+            })}
           </div>
 
           <button className="allProdactBtn">View All Products</button>
