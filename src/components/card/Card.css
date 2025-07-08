@@ -1,3 +1,8 @@
+.allCard {
+  text-decoration: none;
+  color: black;
+}
+
 .card {
   width: 270px;
   margin: 0 auto;
@@ -10,6 +15,16 @@
 
 .card:hover .sale {
   left: 5px;
+}
+
+.seeSpan {
+  padding: 5px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-img {

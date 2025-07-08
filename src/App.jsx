@@ -73,34 +73,15 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home showOpenModal={showOpenModal} />} />
-          <Route
-            path="/contact"
-            element={<Contact showOpenModal={showOpenModal} />}
-          />
-          <Route
-            path="/aboute"
-            element={<Aboute showOpenModal={showOpenModal} />}
-          />
-          <Route
-            path="/signUp"
-            element={<SignUp showOpenModal={showOpenModal} />}
-          />
-          <Route
-            path="/login"
-            element={<Login showOpenModal={showOpenModal} />}
-          />
+          <Route path="/contact" element={<Contact showOpenModal={showOpenModal} />} />
+          <Route path="/aboute" element={<Aboute showOpenModal={showOpenModal} />} />
+          <Route path="/signUp" element={<SignUp showOpenModal={showOpenModal} />} />
+          <Route path="/login" element={<Login showOpenModal={showOpenModal} />} />
           <Route path="/myaccount" element={<MyAccount />} />
-          <Route
-            path="/oneprodact"
-            element={<OneProdact setCount={setCount} count={count} littleData={littleData} />}
-          />
-
-
+          <Route path="/oneprodact" element={<OneProdact setCount={setCount} count={count} littleData={littleData} />} />
           <Route path="/wishlist" element={<WishList/>} />
-
           <Route path="*" element={<Erorr />} />
         </Routes>
-
         <Footer />
       </BrowserRouter>
     </>

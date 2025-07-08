@@ -158,6 +158,8 @@ function OneProdact({ setCount, count, littleData }) {
           </div>
 
           <div className="cards">
+
+            
             <Card />
             <Card />
             <Card />

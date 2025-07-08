@@ -6,3 +6,23 @@
 .swiper .swiper-pagination-bullet {
   background-color: red;
 }
+.hero-left ul a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.hero-left ul a h3 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.barsImg {
+  width: 40px;
+  height: 40px;
+}
+
+.barsImg img {
+  width: 100%;
+}

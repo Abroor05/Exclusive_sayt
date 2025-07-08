@@ -71,15 +71,28 @@ function Navbar({ setShowOpenModal }) {
                 <CiSearch className="Lupa" />
               </span>
 
-              <span>
-                <Link to="/wishlist"><FaRegHeart className="icons" /></Link>
-                <LuShoppingCart className="icons Person" />
-                <IoPersonSharp
-                  className="icons"
-                  onClick={() => {
-                    setShowOpenModal((showOpenModal) => !showOpenModal);
-                  }}
-                />
+              <span className="bolimlar">
+                <span>
+                  <Link to="/wishlist" className="likeIcons">
+                    <FaRegHeart className="icons " />
+                    <h6 className="liks">0</h6>
+                  </Link>
+                </span>
+                <span>
+                  <Link  className="shopIcons" >
+                    <LuShoppingCart className="icons"/>
+                    <h6 className="shops">0</h6>
+                  </Link>
+                </span>
+                <span>
+                  {" "}
+                  <IoPersonSharp
+                    className="icons"
+                    onClick={() => {
+                      setShowOpenModal((showOpenModal) => !showOpenModal);
+                    }}
+                  />
+                </span>
               </span>
             </div>
           </div>

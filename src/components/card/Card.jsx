@@ -7,24 +7,24 @@ import { Link } from "react-router-dom";
 function Card({item}) {
   return (
     <>
-      <div className="card">
+     <Link to={"/oneprodact"} className="allCard"> <div className="card">
         <div className="card-img">
           <div className="centrImg">
             <img src= {`https://ecommercev01.pythonanywhere.com/${item?.pictures[0]}`}  alt="" />
             <div className="addToCard">
-              <Link to={"/oneprodact"} className="add">
+              <Link className="add">
                 Add To Cart
               </Link>
             </div>
           </div>
           <div className="sales">
             <div className="seeLike">
-              <span>
+              <span className="seeSpan">
                 <FaRegHeart className="like" />
               </span>
-              <span>
+              <Link to={"/oneprodact"} className="seeSpan">
                 <MdOutlineRemoveRedEye className="see" />
-              </span>
+              </Link>
             </div>
             <span className="sale">-40%</span>
           </div>
@@ -47,7 +47,7 @@ function Card({item}) {
             <span>(88)</span>
           </div>
         </div>
-      </div>
+      </div></Link>
     </>
   );
 }
