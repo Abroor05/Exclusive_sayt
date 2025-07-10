@@ -12,9 +12,9 @@ function Card({item}) {
           <div className="centrImg">
             <img src= {`https://ecommercev01.pythonanywhere.com/${item?.pictures[0]}`}  alt="" />
             <div className="addToCard">
-              <Link className="add">
+              <div className="add">
                 Add To Cart
-              </Link>
+              </div>
             </div>
           </div>
           <div className="sales">
@@ -22,9 +22,9 @@ function Card({item}) {
               <span className="seeSpan">
                 <FaRegHeart className="like" />
               </span>
-              <Link to={"/oneprodact"} className="seeSpan">
+              <div to={"/oneprodact"} className="seeSpan">
                 <MdOutlineRemoveRedEye className="see" />
-              </Link>
+              </div>
             </div>
             <span className="sale">-40%</span>
           </div>
