@@ -90,6 +90,9 @@
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .addToCard .add {
@@ -134,4 +137,3 @@
 .stars span {
   color: #808080;
 }
-

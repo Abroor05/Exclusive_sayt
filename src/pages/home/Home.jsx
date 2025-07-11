@@ -24,6 +24,7 @@ function Home({ showOpenModal }) {
 
   useEffect(() => {
     getData().then(setData);
+    
   }, []);
 
 
@@ -87,7 +88,7 @@ function Home({ showOpenModal }) {
           </div>
 
           <div className="cards">
-            { data.slice(0, countSee).map((item) => {
+            { data.slice(0, countSee).map((item) => {              
               return <Card item={item} />;
             })}
           </div>
@@ -175,7 +176,7 @@ function Home({ showOpenModal }) {
 
           <div className="cards">
             { data.slice(0, 4).map((item) => {
-              return <Card item={item} />;
+              return <Card data={data} item={item} />;
             })}
           </div>
 

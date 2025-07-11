@@ -2,11 +2,11 @@ import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import "./Login.css";
 import { baseUrl } from "../../services/baseUrl";
-import { setToken } from "../../services/token";
+import { getToken, setToken } from "../../services/token";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login({setUserToken}) {
   const[email_or_phone, setEmailOrPhone] = useState(null);
   const [password, setPassword] = useState(null);
   const navigate = useNavigate()
@@ -31,6 +31,7 @@ function Login() {
       .then((response) => response.json())
       .then((result) => {
         setToken(result?.access)
+        setUserToken(getToken())
         navigate("/")
         toast.success("Ro'yhatdan o'tildi")
       })

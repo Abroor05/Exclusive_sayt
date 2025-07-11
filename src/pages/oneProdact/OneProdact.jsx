@@ -1,21 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./OneProdact.css";
 import { FaStar } from "react-icons/fa";
 import { CiHeart, CiStar } from "react-icons/ci";
 import { TbTruckDelivery } from "react-icons/tb";
 import { RxUpdate } from "react-icons/rx";
 import Card from "../../components/card/Card";
-import { getDataId } from "../../services/app";
+import { getData, getDataId, oneProdactData } from "../../services/app";
+import { baseUrl } from "../../services/baseUrl";
 
-function OneProdact({ setCount, count, littleData }) {
+function OneProdact({ setCount, count, littleData, data }) {
+  const { id } = useParams();
+  const [prodactId, setProdactId] = useState(null);
+  const [mainImg, setMainImg] = useState(null);
 
-  const [dataId, setDataId] = useState([])
+  useEffect(() => {
+    oneProdactData(id).then((data) => {
+      setProdactId(data);
+      setMainImg(data?.pictures[0].file);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }, [id]);
 
+  const [dataId, setDataId] = useState([]);
 
-  useEffect(() =>{
-    getDataId().then(setDataId)
-  }, [])
+  useEffect(() => {
+    getData().then(setDataId);
+  }, []);
 
   return (
     <>
@@ -29,36 +40,33 @@ function OneProdact({ setCount, count, littleData }) {
             <Link>Havic HV G-92 Gamepad</Link>
           </div>
 
-          
           <div className="oneProducts">
             <div className="oneProdactLeft">
               <div className="littleImgs">
-                {littleData?.map((item, index) => {
-                  <div className="littleImg">
-                    <img src={item.imgs[1]} alt="" />
-                  </div>;
+                {prodactId?.pictures?.map((item) => {
+                  return (
+                    <div className="littleImg">
+                      <img
+                        onClick={() => {
+                          setMainImg(item?.file);
+                        }}
+                        src={`${baseUrl}${item?.file}`}
+                        alt=""
+                      />
+                    </div>
+                  );
                 })}
-
-                <div className="littleImg">
-                  <img src="/imgs/card1.png" alt="" />
-                </div>
-                <div className="littleImg">
-                  <img src="/imgs/card1.png" alt="" />
-                </div>
-                <div className="littleImg">
-                  <img src="/imgs/card1.png" alt="" />
-                </div>
               </div>
 
               <div className="bigImg">
                 <div className="biger">
-                  <img src="/imgs/card2.png" alt="" />
+                  <img src={`${baseUrl}${mainImg}`} alt="" />
                 </div>
               </div>
             </div>
 
             <div className="oneProdactRight">
-              <h3>Havic HV G-92 Gamepad</h3>
+              <h3>{prodactId?.title}</h3>
               <div className="baho">
                 <span>
                   <FaStar className="gold" />
@@ -75,13 +83,9 @@ function OneProdact({ setCount, count, littleData }) {
                 </div>
               </div>
 
-              <h3 className="price">$192.00</h3>
+              <h3 className="price">{prodactId?.price}</h3>
 
-              <p className="desc">
-                PlayStation 5 Controller Skin High quality vinyl with air
-                channel adhesive for easy bubble free install & mess free
-                removal Pressure sensitive.
-              </p>
+              <p className="desc">{prodactId?.description}</p>
 
               <div className="colors">
                 <h3>Colors:</h3>
@@ -158,12 +162,9 @@ function OneProdact({ setCount, count, littleData }) {
           </div>
 
           <div className="cards">
-
-            
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {dataId?.slice(0, 4).map((item) => {
+              return <Card item={item} />;
+            })}
           </div>
         </div>
       </section>

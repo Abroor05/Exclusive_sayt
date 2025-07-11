@@ -1,3 +1,5 @@
+import { baseUrl } from "./baseUrl";
+
 export const getData = () => {
   const requestOptions = {
     method: "GET",
@@ -5,7 +7,7 @@ export const getData = () => {
   };
 
   return fetch(
-    "https://ecommercev01.pythonanywhere.com/product/list/",
+    `${baseUrl}/product/list/`,
     requestOptions
   )
     .then((response) => response.json())
@@ -13,7 +15,8 @@ export const getData = () => {
       return result;
     })
     .catch((error) => {
-      return error;
+      console.log(error);
+      return []
     });
 };
 
@@ -24,7 +27,7 @@ export const getDataId = () => {
   };
 
   return fetch(
-    "https://ecommercev01.pythonanywhere.com/product/detail/?product_id=1",
+    `${baseUrl}/product/detail/?product_id=1`,
     requestOptions
   )
     .then((response) => response.json())
@@ -55,4 +58,19 @@ export const getMenuBars = () => {
     });
 };
 
+export const oneProdactData = (id) => {
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
 
+  return fetch(`${baseUrl}/product/detail/?product_id=${id}`, requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      return result;
+    })
+    .catch((error) => {
+      console.error(error);
+      return [];
+    });
+};
