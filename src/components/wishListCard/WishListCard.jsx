@@ -5,15 +5,16 @@ import { Link } from 'react-router-dom'
 import "./WishList.css"
 import { FaRegTrashCan } from 'react-icons/fa6'
 import { LuShoppingCart } from 'react-icons/lu'
+import { baseUrl } from '../../services/baseUrl'
 
-function WishListCard() {
+function WishListCard({item}) {
   return (
     <>
     
         <div className="card">
         <div className="card-img">
           <div className="centrImg">
-            <img src="/imgs/card1.png" alt="" />
+            <img src={`${baseUrl}${item?.pictures[0]}`} alt="" />
             <div className="addToCard">
               <Link to={"/oneprodact"} className="add">
                 <LuShoppingCart /> Add To Cart 
@@ -31,11 +32,11 @@ function WishListCard() {
         </div>
 
         <div className="card-info">
-          <h4>HAVIT HV-G92 Gamepad</h4>
+          <h4>{item.title}</h4>
           <p>
-            $120{" "}
+            {item?.discount_price}{" "}
             <span>
-              <del>$160</del>
+              <del>{item?.price}</del>
             </span>
           </p>
           <div className="stars">

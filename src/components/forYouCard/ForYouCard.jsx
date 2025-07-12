@@ -3,14 +3,15 @@ import { FaStar } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { baseUrl } from "../../services/baseUrl";
 
-function ForYouCard() {
+function ForYouCard({ item }) {
   return (
     <>
       <div className="card">
         <div className="card-img">
           <div className="centrImg">
-            <img src="/imgs/card1.png" alt="" />
+            <img src={`${baseUrl}${item?.pictures[0]}`} alt="" />
             <div className="addToCard">
               <Link to={"/oneprodact"} className="add">
                 <LuShoppingCart /> Add To Cart
@@ -28,11 +29,11 @@ function ForYouCard() {
         </div>
 
         <div className="card-info">
-          <h4>HAVIT HV-G92 Gamepad</h4>
+          <h4>{item.title}</h4>
           <p>
-            $120{" "}
+            {item?.discount_price}{" "}
             <span>
-              <del>$160</del>
+              <del>{item?.price}</del>
             </span>
           </p>
           <div className="stars">
@@ -41,7 +42,7 @@ function ForYouCard() {
             <FaStar />
             <FaStar />
             <FaStar />
-            <span>(88)</span>
+            <span>({item?.quantity})</span>
           </div>
         </div>
       </div>

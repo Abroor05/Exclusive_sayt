@@ -4,6 +4,8 @@ import { getData } from "../../services/app";
 
 function Search({ setSearchItem, searchItem }) {
   const [data, setData] = useState([]);
+  const [filterData, setFilterData] = useState(data)
+  
 
   useEffect(() => {
     getData().then(setData);

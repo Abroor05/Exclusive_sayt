@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./WishList.css";
 import WishListCard from "../../components/wishListCard/WishListCard";
 import ForYouCard from "../../components/forYouCard/ForYouCard";
+import { getData } from "../../services/app";
 
 function WishList() {
+
+  const [wishData, setWishData] = useState([])
+
+
+  useEffect(()=>{
+    getData().then(setWishData)
+  }, [])
+
   return (
     <>
       <section>
@@ -15,10 +24,12 @@ function WishList() {
             </div>
 
             <div className="wishListCards">
-              <WishListCard />
-              <WishListCard />
-              <WishListCard />
-              <WishListCard />
+               {
+                wishData?.slice(0, 4).map((item)=>{
+                  return <WishListCard item={item} />
+                })
+              }
+              
             </div>
           </div>
         </div>
@@ -33,10 +44,11 @@ function WishList() {
             </div>
 
             <div className="justForYouCards">
-              <ForYouCard />
-              <ForYouCard />
-              <ForYouCard />
-              <ForYouCard />
+              {
+                wishData?.slice(0, 4).map((item)=>{
+                  return <ForYouCard item={item} />
+                })
+              }
             </div>
           </div>
         </div>
