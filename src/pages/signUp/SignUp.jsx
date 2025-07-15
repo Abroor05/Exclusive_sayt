@@ -30,7 +30,7 @@ function SignUp() {
 
     console.log({ first_name, email_or_phone, password });
 
-    fetch(`${baseUrl}/user/register/`, requestOptions)
+   return fetch(`${baseUrl}/user/register/`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
        if(result?.message) {
@@ -44,6 +44,7 @@ function SignUp() {
       })
       .catch((error) =>{
          console.error(error)
+         return [];
       });
   };
 

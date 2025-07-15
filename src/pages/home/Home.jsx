@@ -15,23 +15,25 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { BiLogOut } from "react-icons/bi";
 import ShowOpenModal from "../../components/showOpenModal/ShowOpenModal";
 import { getData } from "../../services/app";
+import AddToCardModal from "../../components/addToCardModal/AddToCardModal";
 
-function Home({ showOpenModal }) {
-  const [data, setData] = useState([]);
-  const [countSee, setCountSee] = useState(4)
-
-
+function Home({ showOpenModal, setAddModal, addModal, count, data, setData }) {
+  // const [data, setData] = useState([]);
+  const [countSee, setCountSee] = useState(4);
 
   useEffect(() => {
     getData().then(setData);
-    
   }, []);
-
-
 
   return (
     <>
       {showOpenModal == true ? <ShowOpenModal /> : ""}
+
+      {addModal == true ? (
+        <AddToCardModal count={count} setAddModal={setAddModal} />
+      ) : (
+        ""
+      )}
 
       <section className="hero-section">
         <div className="container">
@@ -88,14 +90,25 @@ function Home({ showOpenModal }) {
           </div>
 
           <div className="cards">
-            { data.slice(0, countSee).map((item) => {              
-              return <Card item={item} />;
+            {data?.slice(0, countSee).map((item) => {
+              return (
+                <Card
+                  addModal={addModal}
+                  setAddModal={setAddModal}
+                  item={item}
+                />
+              );
             })}
           </div>
 
-          <button onClick={()=>{
-            setCountSee(data.length)
-          }} className="allProdactBtn">View All Products</button>
+          <button
+            onClick={() => {
+              setCountSee(data.length);
+            }}
+            className="allProdactBtn"
+          >
+            View All Products
+          </button>
         </div>
       </section>
 
@@ -147,14 +160,18 @@ function Home({ showOpenModal }) {
             </div>
 
             <div className="nextBtn">
-              <button onClick={()=>{
-                  setCountSee(data.length)
-              }}>View All</button>
+              <button
+                onClick={() => {
+                  setCountSee(data.length);
+                }}
+              >
+                View All
+              </button>
             </div>
           </div>
 
           <div className="cards">
-            { data.slice(0, countSee).map((item) => {
+            {data.slice(0, countSee).map((item) => {
               return <Card item={item} />;
             })}
           </div>
@@ -175,7 +192,7 @@ function Home({ showOpenModal }) {
           </div>
 
           <div className="cards">
-            { data.slice(0, 4).map((item) => {
+            {data.slice(0, 4).map((item) => {
               return <Card data={data} item={item} />;
             })}
           </div>

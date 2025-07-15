@@ -8,7 +8,7 @@ import { TextField } from "@mui/material";
 import { IoPersonSharp } from "react-icons/io5";
 import { getToken } from "../../services/token";
 
-function Navbar({ setShowOpenModal, setSearchItem, searchItem }) {
+function Navbar({ setShowOpenModal, setSearchItem, searchItem, filterData }) {
   return (
     <>
       <nav className="top-nav">
@@ -66,6 +66,7 @@ function Navbar({ setShowOpenModal, setSearchItem, searchItem }) {
                   <TextField
                     onInput={(e) => {
                       setSearchItem(e.target.value);
+                      filterData(e.target.value)
                     }}
                     id="standard-basic"
                     label="What are you"

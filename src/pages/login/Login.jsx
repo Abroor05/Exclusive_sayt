@@ -37,6 +37,7 @@ function Login({setUserToken}) {
       })
       .catch((error) => {
         console.error(error);
+        return [];
       });
   };
 

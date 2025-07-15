@@ -96,27 +96,27 @@ function OneProdact({ setCount, count, littleData, data }) {
               </div>
 
               <div className="buys">
-                <div className="counts">
-                  <div
-                    onClick={() => {
-                      if (count > 0) {
-                        setCount(count - 1);
-                      }
-                    }}
-                    className="minus"
-                  >
-                    -
+                  <div className="counts">
+                    <div
+                      onClick={() => {
+                        if (count > 0) {
+                          setCount(count - 1);
+                        }
+                      }}
+                      className="minus"
+                    >
+                      -
+                    </div>
+                    <div className="count">{count}</div>
+                    <div
+                      onClick={() => {
+                        setCount(count + 1);
+                      }}
+                      className="plas"
+                    >
+                      +
+                    </div>
                   </div>
-                  <div className="count">{count}</div>
-                  <div
-                    onClick={() => {
-                      setCount(count + 1);
-                    }}
-                    className="plas"
-                  >
-                    +
-                  </div>
-                </div>
 
                 <div className="buyBtn">Buy Now</div>
 

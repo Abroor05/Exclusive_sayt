@@ -255,6 +255,13 @@
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 10px;
+  font-weight: 600;
+  transition: all .3s ease;
+}
+
+.allProdactBtn:hover {
+  transform: scale(1.001);
+  box-shadow: 0 0 10px 10px rgb(255, 122, 122);
 }
 
 /* section 3 */

@@ -1,0 +1,81 @@
+.addCard {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.419);
+    z-index: 99999;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+}
+
+.addModal {
+    width: 700px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.xmark {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    font-size: 18px;
+}
+
+.modalCounts{ 
+    width: 200px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modalCounts button {   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.modalCounts h3 {
+    font-size: 36px;
+}
+
+.colors {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.rang2 {
+    background-color: aqua;
+}
+
+.rang1 {
+    background-color: gray;
+}
+
+.colors .rang {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+
+.colors span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}

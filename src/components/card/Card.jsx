@@ -5,17 +5,21 @@ import "./Card.css";
 import { Link } from "react-router-dom";
 import { baseUrl } from "../../services/baseUrl";
 
-function Card({ item}) {
+function Card({ item, setAddModal, addModal}) {
   return (
-    <>
-      <Link to={`/oneprodact/${item?.id}`} className="allCard">
+    
+      <> 
         {" "}
         <div className="card">
           <div className="card-img">
             <div className="centrImg">
               <img src={`${baseUrl}/${item?.pictures[0]}`} alt="" />
               <div className="addToCard">
-                <div className="add">Add To Cart</div>
+                <div onClick={()=>{
+                  console.log("salom jigar");
+                  setAddModal(true)
+                  
+                }} className="add">Add To Cart</div>
               </div>
             </div>
             <div className="sales">
@@ -49,7 +53,6 @@ function Card({ item}) {
             </div>
           </div>
         </div>
-      </Link>
     </>
   );
 }
