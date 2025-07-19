@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AddToCardModal.css";
 import { useParams } from "react-router-dom";
 import { HiOutlineXMark } from "react-icons/hi2";
@@ -6,9 +6,13 @@ import { oneProdactData } from "../../services/app";
 
 function AddToCardModal({ setAddModal }) {
   const [modalData, setModalData] = useState([]);
-  const [sanash, setSanash] = useState(0)
+  const [sanash, setSanash] = useState(0);
 
   const { id } = useParams();
+
+  useEffect(() => {
+    oneProdactData(modalData).then(setModalData);
+  }, [modalData]);
 
   return (
     <>
@@ -19,8 +23,7 @@ function AddToCardModal({ setAddModal }) {
               onClick={() => {
                 setAddModal(false);
               }}
-              className="xmark"
-            >
+              className="xmark">
               <HiOutlineXMark />
             </button>
 
@@ -30,7 +33,7 @@ function AddToCardModal({ setAddModal }) {
 
             <div className="addInfos">
               <div className="modalInfo">
-                <h3>Lorem ipsum dolor sit amet.</h3>
+                <h3>{modalData?.title}</h3>
 
                 <div className="colors">
                   <span>
@@ -48,15 +51,25 @@ function AddToCardModal({ setAddModal }) {
                 <div className="sizes"></div>
 
                 <div className="modalCounts">
-                    <button onClick={()=>{
-                       if(sanash > 0) {
-                         setSanash(sanash-1)
-                       }
-                    }} modalMinus>-</button> 
-                    <h3 className="modalCount">{sanash}</h3>
-                    <button onClick={()=>{
-                         setSanash(sanash+1)
-                    }}  className="modalPlas">+</button>
+                  <button
+                    onClick={() => {
+                      if (sanash > 0) {
+                        setSanash(sanash - 1);
+                      }
+                    }}
+                    modalMinus
+                  >
+                    -
+                  </button>
+                  <h3 className="modalCount">{sanash}</h3>
+                  <button
+                    onClick={() => {
+                      setSanash(sanash + 1);
+                    }}
+                    className="modalPlas"
+                  >
+                    +
+                  </button>
                 </div>
 
                 <div className="ModalPrice">

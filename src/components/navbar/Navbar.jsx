@@ -65,9 +65,11 @@ function Navbar({ setShowOpenModal, setSearchItem, searchItem, filterData }) {
                 <span className="search">
                   <TextField
                     onInput={(e) => {
-                      setSearchItem(e.target.value);
+                      console.log(e.target.value);
+                      
+                      setSearchItem(e.target.value);  
                       filterData(e.target.value)
-                    }}
+                    }}    
                     id="standard-basic"
                     label="What are you"
                     value={searchItem}

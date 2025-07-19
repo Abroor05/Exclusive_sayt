@@ -8,7 +8,6 @@ import { TbMoneybag } from "react-icons/tb";
 import { LuTwitter } from "react-icons/lu";
 import { IoLogoInstagram } from "react-icons/io";
 import { FaLinkedinIn } from "react-icons/fa";
-import Box from "../../components/box/Box";
 import Garand from "../../components/garand/Garand";
 
 function Aboute() {

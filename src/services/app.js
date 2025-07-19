@@ -6,17 +6,14 @@ export const getData = () => {
     redirect: "follow",
   };
 
-  return fetch(
-    `${baseUrl}/product/list/`,
-    requestOptions
-  )
+  return fetch(`${baseUrl}/product/list/`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
       return result;
     })
     .catch((error) => {
       console.log(error);
-      return []
+      return [];
     });
 };
 
@@ -26,10 +23,7 @@ export const getDataId = () => {
     redirect: "follow",
   };
 
-  return fetch(
-    `${baseUrl}/product/detail/?product_id=1`,
-    requestOptions
-  )
+  return fetch(`${baseUrl}/product/detail/?product_id=1`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
       return result;
@@ -45,16 +39,14 @@ export const getMenuBars = () => {
     redirect: "follow",
   };
 
-  return fetch(
-    "https://ecommercev01.pythonanywhere.com/product/categories/",
-    requestOptions
-  )
+  return fetch(`${baseUrl}/product/categories/`, requestOptions)
     .then((response) => response.json())
     .then((result) => {
       return result;
     })
     .catch((error) => {
-      return error;
+      console.log(error);
+      return [];
     });
 };
 

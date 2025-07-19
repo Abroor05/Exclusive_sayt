@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import "./Home.css";
 
 import Card from "../../components/card/Card";
-import Box from "../../components/box/Box";
 import CatigorySlayd from "../../components/catigorySlayd/CatigorySlayd";
 import ArravelPhoto from "../../components/arravelPhote/ArravelPhoto";
 import Garand from "../../components/garand/Garand";
 import HeroSlayd from "../../components/heroSlayd/HeroSlayd";
-import { IoPersonOutline, IoStarOutline } from "react-icons/io5";
-import { LuShoppingBag } from "react-icons/lu";
-import { IoIosCloseCircleOutline } from "react-icons/io";
-import { BiLogOut } from "react-icons/bi";
 import ShowOpenModal from "../../components/showOpenModal/ShowOpenModal";
-import { getData } from "../../services/app";
+import { getData, getMenuBars } from "../../services/app";
 import AddToCardModal from "../../components/addToCardModal/AddToCardModal";
+import { Skeleton } from "@mui/material";
+import CategoryBox from "../../components/box/CategoryBox";
 
 function Home({ showOpenModal, setAddModal, addModal, count, data, setData }) {
-  // const [data, setData] = useState([]);
   const [countSee, setCountSee] = useState(4);
+  const [boxData, setBoxData] = useState(null);
+  const [cardLoader, setCardLoader] = useState(false);
 
   useEffect(() => {
-    getData().then(setData);
+    getMenuBars().then(setBoxData);
+  }, []);
+
+  useEffect(() => {
+    setCardLoader(true);
+    getData()
+      .then(setData)
+      .finally(() => {
+        setCardLoader(false);
+      });
   }, []);
 
   return (
@@ -93,6 +99,7 @@ function Home({ showOpenModal, setAddModal, addModal, count, data, setData }) {
             {data?.slice(0, countSee).map((item) => {
               return (
                 <Card
+                  key={item?.id}
                   addModal={addModal}
                   setAddModal={setAddModal}
                   item={item}
@@ -136,12 +143,9 @@ function Home({ showOpenModal, setAddModal, addModal, count, data, setData }) {
           </div>
 
           <div className="boxs">
-            <Box />
-            <Box />
-            <Box />
-            <Box />
-            <Box />
-            <Box />
+            {boxData?.map((item) => {
+              return <CategoryBox key={item?.id} item={item} />;
+            })}
           </div>
         </div>
       </section>
@@ -171,9 +175,21 @@ function Home({ showOpenModal, setAddModal, addModal, count, data, setData }) {
           </div>
 
           <div className="cards">
-            {data.slice(0, countSee).map((item) => {
-              return <Card item={item} />;
-            })}
+            {cardLoader ? (
+              <div>salom</div>
+            ) : (
+              data.slice(0, 4).map((item) => {
+                return <Card data={data} item={item} key={item?.id} />;
+              })
+            )}
+{/* <div>
+  <Box sx={{ width: 210 }}>
+  <Skeleton variant="rectangular" width={210} height={118} />
+  <Skeleton />
+  <Skeleton width="60%" />
+</Box>
+</div> */}
+
           </div>
         </div>
       </section>
@@ -193,7 +209,7 @@ function Home({ showOpenModal, setAddModal, addModal, count, data, setData }) {
 
           <div className="cards">
             {data.slice(0, 4).map((item) => {
-              return <Card data={data} item={item} />;
+              return <Card data={data} item={item} key={item?.id} />;
             })}
           </div>
 

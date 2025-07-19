@@ -9,7 +9,7 @@ function SignUp() {
   const [first_name, setFirstName] = useState(null);
   const [email_or_phone, setEmailOrPhone] = useState(null);
   const [password, setPassword] = useState(null);
-  const naviget = useNavigate()
+  const naviget = useNavigate();
 
   const signUp = () => {
     const myHeaders = new Headers();
@@ -30,21 +30,26 @@ function SignUp() {
 
     console.log({ first_name, email_or_phone, password });
 
-   return fetch(`${baseUrl}/user/register/`, requestOptions)
+    return fetch(`${baseUrl}/user/register/`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-       if(result?.message) {
-        alert(result?.message)
-        naviget("/login")
-       } else if (result?.email_or_phone[0]) {
-        alert(result?.email_or_phone[0])
-       } else if (result?.password[0]) {
-        alert(result?.password[0])
-       } 
+        if (result?.message) {
+          alert(result.message);
+          naviget("/login");
+        } else if (
+          result?.email_or_phone &&
+          Array.isArray(result.email_or_phone)
+        ) {
+          alert(result.email_or_phone[0]);
+        } else if (result?.password && Array.isArray(result.password)) {
+          alert(result.password[0]);
+        } else {
+          alert("Noma'lum xatolik yuz berdi");
+        }
       })
-      .catch((error) =>{
-         console.error(error)
-         return [];
+      .catch((error) => {
+        console.error(error);
+        return [];
       });
   };
 
@@ -62,12 +67,14 @@ function SignUp() {
                 <p>Enter your details below</p>
               </div>
 
-              <form  
-                onSubmit={(e)=>{
-                  e.preventDefault()
-                  signUp()
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  signUp();
                 }}
-              action="#" className="inputs">
+                action="#"
+                className="inputs"
+              >
                 <span>
                   <TextField
                     className="name inputSign"
@@ -107,7 +114,6 @@ function SignUp() {
               </form>
 
               <div className="signUpBtns">
-                
                 <div className="withGoogleBtn">
                   {" "}
                   <FcGoogle /> Sign up with Google

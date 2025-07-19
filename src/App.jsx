@@ -29,22 +29,25 @@ function App() {
   const [data, setData] = useState([]);
 
   const filterData = (text) => {
-    const  filtered = data.filter((item) =>{
-     return  item.title.toLowerCase().includes(text.toLowerCase())
-    })
+    const filtered = data.filter((item) => {
+      return item?.title?.toLowerCase().includes(text.toLowerCase());
+    });
 
-    setFilterSearch(filtered)
+    setFilterSearch(filtered);
   };
 
-
-  useEffect(()=>{
-    getData().then(setData)
-  })
+  useEffect(() => {
+    getData().then((data) => {
+      setData(data);
+      setFilterSearch(data);
+    });
+  }, []);
   return (
     <>
       <BrowserRouter>
         <ToastContainer theme="dark" />
-        <Navbar filterData={filterData}
+        <Navbar
+          filterData={filterData}
           setShowOpenModal={setShowOpenModal}
           userToken={userToken}
           setSearchItem={setSearchItem}
@@ -95,7 +98,11 @@ function App() {
           <Route
             path="/search"
             element={
-              <Search setSearchItem={setSearchItem} searchItem={searchItem} />
+              <Search
+                setSearchItem={setSearchItem}
+                searchItem={searchItem}
+                filterSearch={filterSearch}
+              />
             }
           />
           <Route path="*" element={<Erorr />} />

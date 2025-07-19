@@ -6,33 +6,111 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { FaArrowRight } from "react-icons/fa";
 import { getData, getMenuBars } from "../../services/app";
-import "./HeroSlayd.css"
+import "./HeroSlayd.css";
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import Skeleton from '@mui/material/Skeleton';
 
 function HeroSlayd() {
   const [bars, setBars] = useState([]);
+  const [loader, setLoader] = useState(false)
 
-  useEffect(()=>{
+  useEffect(() => {
+    setLoader(true)
     getMenuBars().then(setBars)
-
-  }, [])
-  
+    .finally(()=>{
+      setLoader(false)
+    })
+  }, []);
 
   return (
     <>
       <div className="hero">
         <div className="hero-left">
           <ul>
-            {bars?.map((item) => {
-              return <Link> 
-                <h3>{item.title}</h3>
-                <div className="barsImg"><img src={item.image} alt="" /></div>
-              </Link>;
+            {loader ? 
+            <div>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box sx={{ margin: 1 }}>
+                    <Skeleton variant="circular">
+                      <Avatar />
+                    </Skeleton>
+                  </Box>
+                  <Box sx={{ width: "100%" }}>
+                    <Skeleton width="100%">
+                      <Typography>.</Typography>
+                    </Skeleton>
+                  </Box>
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box sx={{ margin: 1 }}>
+                    <Skeleton variant="circular">
+                      <Avatar />
+                    </Skeleton>
+                  </Box>
+                  <Box sx={{ width: "100%" }}>
+                    <Skeleton width="100%">
+                      <Typography>.</Typography>
+                    </Skeleton>
+                  </Box>
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box sx={{ margin: 1 }}>
+                    <Skeleton variant="circular">
+                      <Avatar />
+                    </Skeleton>
+                  </Box>
+                  <Box sx={{ width: "100%" }}>
+                    <Skeleton width="100%">
+                      <Typography>.</Typography>
+                    </Skeleton>
+                  </Box>
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box sx={{ margin: 1 }}>
+                    <Skeleton variant="circular">
+                      <Avatar />
+                    </Skeleton>
+                  </Box>
+                  <Box sx={{ width: "100%" }}>
+                    <Skeleton width="100%">
+                      <Typography>.</Typography>
+                    </Skeleton>
+                  </Box>
+                </Box>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Box sx={{ margin: 1 }}>
+                    <Skeleton variant="circular">
+                      <Avatar />
+                    </Skeleton>
+                  </Box>
+                  <Box sx={{ width: "100%" }}>
+                    <Skeleton width="100%">
+                      <Typography>.</Typography>
+                    </Skeleton>
+                  </Box>
+                </Box>
+                
+            </div>   :
+            bars?.map((item) => {
+                return (
+                  <Link key={item?.id}>
+                    <div className="barsImg">
+                      <img src={item.image} alt="" />
+                    </div>
+                    <h3>{item.title}</h3>
+                  </Link>
+                );
+              }
+            )
              
-            })}
+            }
           </ul>
         </div>
 
-        <Swiper
+        <div className="heroRight">
+          <Swiper
           spaceBetween={30}
           pagination={{
             clickable: true,
@@ -311,6 +389,7 @@ function HeroSlayd() {
             </div>
           </SwiperSlide>
         </Swiper>
+        </div>
       </div>
     </>
   );

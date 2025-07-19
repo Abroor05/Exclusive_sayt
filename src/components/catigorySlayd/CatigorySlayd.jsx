@@ -2,14 +2,28 @@ import React from "react";
 import "./CatigorySlayd.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
-
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 function CatigorySlayd() {
   return (
     <>
-     <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+      <div className="slayderCat">
+        <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
         <SwiperSlide> <section className="MusicSlayd">
         <div className="container">
           <div className="slayd-left">
@@ -317,6 +331,7 @@ function CatigorySlayd() {
         </div>
       </section></SwiperSlide>
       </Swiper>
+      </div>
     </>
   );
 }

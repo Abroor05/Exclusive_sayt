@@ -2,22 +2,16 @@ import React, { useEffect, useState } from "react";
 import Card from "../../components/card/Card";
 import { getData } from "../../services/app";
 
-function Search({ setSearchItem, searchItem }) {
-  const [data, setData] = useState([]);
-  const [filterData, setFilterData] = useState(data)
-  
+function Search({ filterSearch}) {
 
-  useEffect(() => {
-    getData().then(setData);
-  });
 
   return (
     <>
       <div className="container">
         <div className="cards">
-          {data?.map((item) => {
+          {filterSearch?.map((item) => {
             return <Card item={item} />;
-          })}
+          })} 
         </div>
       </div>
     </>
